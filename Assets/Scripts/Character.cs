@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Character : MonoBehaviour
@@ -33,7 +34,7 @@ public abstract class Character : MonoBehaviour
     {
         if (Health <= 0)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
             return true;
         }
         else { return false; }

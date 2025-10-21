@@ -8,6 +8,21 @@ public class Player : Character
         base.Init(50);
     }
 
+    public void OnHitWith(Enemy enemy) //method to allow for different results depending on damage source
+    {
+        TakeDamage(enemy.DamageHit);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Enemy enemy = other.gameObject.GetComponent<Enemy>();
+
+        if (enemy != null) 
+        {
+           OnHitWith(enemy);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
