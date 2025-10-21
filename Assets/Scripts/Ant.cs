@@ -1,16 +1,22 @@
 using UnityEngine;
 
-public class Crocodile1 : MonoBehaviour
+public class Ant : Enemy
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] Vector2 velocity; //show private variable in unity instead of having to make it public
+    public Transform[] MovePoints;
+    
     void Start()
     {
-        
+        base.Init(30);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public override void Behavior()
+    {
+        throw new System.NotImplementedException();
     }
 }

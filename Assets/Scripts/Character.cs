@@ -8,8 +8,18 @@ public abstract class Character : MonoBehaviour
         get { return health; }
         set { health = value < 0 ? 0 : value; }
     }
+
     protected Animator anim;
     protected Rigidbody2D rb;
+
+    public void Init(int startingHealth)
+    {
+        Health = startingHealth;
+        Debug.Log($"{this.name}'s HP: {this.Health}    ");
+
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>(); //getting component to run anims
+    }
 
     public void TakeDamage(int damage)
     {
