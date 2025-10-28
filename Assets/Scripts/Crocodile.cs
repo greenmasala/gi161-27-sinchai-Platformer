@@ -14,7 +14,7 @@ public class Crocodile : Enemy, IShootable
     void Start()
     {
         base.Init(60);
-        DamageHit = 30;
+        DamageHit = 30; //collision damage
 
         //attack range and target
         attackRange = 6.0f;
