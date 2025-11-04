@@ -30,7 +30,6 @@ public abstract class Character : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>(); //getting component to run anims
         HealthBar.fillAmount = this.Health / this.MaxHealth;
-
     }
 
     public void TakeDamage(int damage)
