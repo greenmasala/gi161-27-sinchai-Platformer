@@ -13,7 +13,10 @@ public class Banana : Weapon
     public override void OnHitWith(Character character)
     {
         if (character is Enemy)
+        {
             character.TakeDamage(this.Damage);
+            Destroy(this.gameObject);
+        }   
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

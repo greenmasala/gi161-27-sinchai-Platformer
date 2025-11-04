@@ -19,6 +19,7 @@ public abstract class Character : MonoBehaviour
 
     protected Animator anim;
     protected Rigidbody2D rb;
+    [SerializeField] protected Image HealthBar;
 
     public void Init(int startingHealth)
     {
@@ -28,12 +29,15 @@ public abstract class Character : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>(); //getting component to run anims
+        HealthBar.fillAmount = this.Health / this.MaxHealth;
+
     }
 
     public void TakeDamage(int damage)
     {
         Health -= damage;
         Debug.Log($"{this.name} took {damage} damage. Current health: {Health}");
+        HealthBar.fillAmount = this.Health / this.MaxHealth;
 
         IsDead();
     }

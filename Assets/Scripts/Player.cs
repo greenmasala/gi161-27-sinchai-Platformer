@@ -12,7 +12,7 @@ public class Player : Character, IShootable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        base.Init(500);
+        base.Init(200);
         ReloadTime = 0.01f;
         WaitTime = 0.0f;
     }
