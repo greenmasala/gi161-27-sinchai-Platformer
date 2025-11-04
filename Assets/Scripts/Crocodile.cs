@@ -13,7 +13,7 @@ public class Crocodile : Enemy, IShootable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        base.Init(60);
+        base.Init(6000);
         DamageHit = 30; //collision damage
 
         //attack range and target
@@ -21,7 +21,7 @@ public class Crocodile : Enemy, IShootable
         player = GameObject.FindFirstObjectByType<Player>();
 
         WaitTime = 0.0f;
-        ReloadTime = 0.01f;
+        ReloadTime = 2f;
     }
 
     // Update is called once per frame

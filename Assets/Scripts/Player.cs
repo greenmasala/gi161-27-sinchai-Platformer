@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Character, IShootable
 {
@@ -11,7 +12,7 @@ public class Player : Character, IShootable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        base.Init(50);
+        base.Init(500);
         ReloadTime = 0.01f;
         WaitTime = 0.0f;
     }

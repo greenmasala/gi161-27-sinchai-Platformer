@@ -7,7 +7,7 @@ public class Ant : Enemy
     
     void Start()
     {
-        base.Init(30);
+        base.Init(500);
         DamageHit = 5;
 
         velocity = new Vector2(-1.0f, 0.0f); //speed of ant. -1 is going to the left

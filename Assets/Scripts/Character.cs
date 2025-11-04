@@ -1,8 +1,15 @@
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UI;
 public abstract class Character : MonoBehaviour
 {
+    private float maxHealth; 
+    public float MaxHealth
+    {
+        get { return maxHealth; }
+        set { maxHealth = value < 0 ? 0 : value; }
+    }
+
     private int health;
     public int Health
     {
@@ -16,7 +23,8 @@ public abstract class Character : MonoBehaviour
     public void Init(int startingHealth)
     {
         Health = startingHealth;
-        Debug.Log($"{this.name}'s HP: {this.Health}    ");
+        maxHealth = startingHealth;
+        Debug.Log($"{this.name}'s HP: {this.Health}");
 
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>(); //getting component to run anims
